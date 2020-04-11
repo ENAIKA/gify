@@ -14,7 +14,7 @@ export class GifyComponent implements OnInit {
   gifs: Gifs;
   imagesArray: any=[];
   
-  constructor( private router: Router, private http: HttpClient, private gifyService:GifyServiceService) { }
+  constructor( private http: HttpClient, private gifyService:GifyServiceService, private router:Router) { }
 
   ngOnInit() {
     
