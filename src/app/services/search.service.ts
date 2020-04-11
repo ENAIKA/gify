@@ -1,7 +1,8 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
-// import { ajax } from 'rxjs/ajax';
+import {environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,24 +10,13 @@ import {Observable} from 'rxjs';
 export class SearchService {
   images: any;
   stickerArray: any[];
-  
-  url: string = "https://api.giphy.com/v1/gifs/trending?api_key=pjR3uS09gufHTypKbwNCzorocADyK0y2&limit=19"
+  key=environment.apiKey
 
   constructor(private http: HttpClient) { }
-  
-
-  
-  //   // Create an Observable that will create an AJAX request
-  //   const apiData = ajax('https://api.giphy.com/v1/gifs/trending?api_key=pjR3uS09gufHTypKbwNCzorocADyK0y2&limit=19');
-  //   // Subscribe to create the request
-  //   apiData.subscribe(res => {
-  //     res.response.data    
-  //   });
-  // }
   getSearchArray():Observable<any>{
     
 
-    return this.http.get<any>("https://api.giphy.com/v1/stickers/trending?api_key=pjR3uS09gufHTypKbwNCzorocADyK0y2&limit=19")
+    return this.http.get<any>(`https://api.giphy.com/v1/stickers/trending?api_key=${this.key}&limit=19`)
      
   }
 }
