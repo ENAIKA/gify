@@ -1,0 +1,24 @@
+<div class="trendGifSearch h1">
+    <form>
+        <label for="trendGifSearch">Trending Gif</label>
+        <input name="trendGifSearch" id="trendGifSearch" type="search"
+            style="margin-left: 10%; width:25%; height: auto;" placeholder="search" required>
+        <button type="submit" (click)="searchItem()">
+            <span class="btn-primary"><i class="fa fa-search"></i>
+            </span>
+        </button>
+    </form>
+
+</div>
+<ng-progress></ng-progress>
+
+<div class="d-flex flex-row flex-wrap justify-content-center ">
+    <div class="col-md-4" style="padding-top: 20px;" *ngFor="let s of searchedGifArray">
+        <div class="card">
+
+            <img src="{{s}}" alt="not showing">
+
+            <!-- <div class="card-footer">gggg</div> -->
+        </div>
+    </div>
+</div>

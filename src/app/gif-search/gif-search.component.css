@@ -1,0 +1,10 @@
+*{
+    background-color: black;
+}
+button,input{
+    background-color: white;
+}
+img{
+    width: 320px;
+    height: auto;
+}
